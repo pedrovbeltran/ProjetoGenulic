@@ -45,6 +45,49 @@ public class MainActivity extends AppCompatActivity {
         End = (EditText) findViewById(R.id.entrada);
         Barra = (ProgressBar) findViewById(R.id.barraProgresso);
     }
+
+    ///***************** Função para desligar ******************************
+
+    public void azul(View View) throws InterruptedException {
+
+        BemVindo.setText("Aguarde...");
+
+        WebView view = (WebView) this.findViewById(R.id.enviaDados);
+        view.getSettings().setJavaScriptEnabled(true);
+
+        String endereco = End.getText().toString() + "/lamp+des";
+
+        for (i = 0; i < 5; i++)
+        {
+            view.loadUrl(endereco);
+            Thread.sleep(500);
+        }
+
+        estadoProg = 0;
+        new Thread(new Runnable() {
+            public void run() {
+                while (estadoProg < 100){
+                    estadoProg += 1;
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Barra.setProgress(estadoProg);
+                        }
+                    });
+                    try{
+                        Thread.sleep(10);
+                    }
+                    catch(InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+        BemVindo.setText("Pronto!");
+    }
+
+    ///******************** Função para ligar ******************************
+
     public void lazul(View View) throws InterruptedException {
 
         BemVindo.setText("Aguarde...");
