@@ -97,19 +97,8 @@ void loop()
           int a = digitalRead(DEL);
           webpage += a;
           webpage += "<h2>Caixa d'água: ";
-          
-          if (distancia <= 15)
-          {
-            webpage += "Cheia";
-          }
-          else if (distancia > 15 && distancia <= 25)
-          {
-            webpage += "Metade";
-          }
-          else
-          {
-            webpage += "Seca";
-          }
+          webpage += distancia;
+          webpage += " cm";
           
           webpage += "</h2>";
      
