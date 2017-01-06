@@ -7,7 +7,7 @@
 #define METADE 12
 #define CHEIA 13
 #define DEL 11
-long duracion, distancia; 
+long duracao, distancia; 
 
 SoftwareSerial esp8266(2,3); // Pino 2 RX, Pino 3 TX
                              
@@ -48,7 +48,7 @@ void loop()
   delayMicroseconds(10);
   digitalWrite(Ptrig, LOW);
   
-  duracion = pulseIn(Pecho, HIGH);
+  duracao = pulseIn(Pecho, HIGH);
   distancia = (duracion/2) / 29;            // calcula a distância em centímetros
     
   if (distancia <= 15)
