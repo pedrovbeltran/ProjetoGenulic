@@ -1,0 +1,9 @@
+O Projeto Genulic é algo bastante simples, a ideia surgiu do prof do IFPE Marcus Vinícius e consistia basicamente, em alguém conseguir
+facilmente controlar e monitorar o que acontece na sua casa mediante a internet. Como o projeto envolvia internet das coisas e ainda
+é muito arriscado colocar objetos domésticos como geladeira, câmera fotográfica à internet, preferiu-se adotar uma rede wi-fi local,
+que o ESP8266 permitiu que fosse criada, dando assim maior segurança ao projeto. Começamos simplesmente enviando comandos para acender
+e apagar um simples LED para fins de teste, pois no futuro poderia evoluir para um relé conectado ao portão de uma garagem, por exemplo,
+não chegamos a testar automações mais complexas como essa, mas deixamos exemplos de automações em uma pasta aqui no repositório também.
+Com esse LED já testado e comprovado que era enviado e executado o comando, foi pensado em algo mais, como o controle de nível de uma
+caixa d'água, com isso foi testado um sensor ultrassônico para simular esse controle de nível, fazendo com que um alarme luminoso
+acendesse quando a caixa estivesse pela metade e acendesse o outro quando estivesse seca.
