@@ -117,8 +117,8 @@ void loop()
        closeCommand+="\r\n";
        
        sendData(closeCommand,3000,DEBUG); // encerra a conexão
-      }
     }
+  }
 }
 
 
